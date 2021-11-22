@@ -1,1 +1,7 @@
-laravel new inertia_laravel8 --jet
+-Iniciar proyecto con
+	laravel new inertia_laravel8 --jet
+-Crear modelos con su respectiva migracion, factory y su controlador(-r) con
+	php artisan make:model Note -rfm
+-Configurar las migraciones, los factories, el seeder, crear la BD y configrar el .env
+-Ejecutar las migraciones con
+    php artisan migrate --seed
