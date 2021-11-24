@@ -5,3 +5,6 @@
 -Configurar las migraciones, los factories, el seeder, crear la BD y configrar el .env
 -Ejecutar las migraciones con
     php artisan migrate --seed
+-Configurar las rutas
+-Crear el controlador
+	php artisan make:controller PageController
