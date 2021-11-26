@@ -8,3 +8,4 @@
 -Configurar las rutas
 -Crear el controlador
 	php artisan make:controller PageController
+-configurar las vistas en vue
