@@ -26,14 +26,14 @@
                                   v-model="form.excerpt">
                                   </textarea>
                                   <label  class="block font-medium text-sm text-gray-700">
-                                      Contenid
+                                      Contenido
                                   </label>
                                   <textarea class="form-input w-full rounded-md shadow"
                                   v-model="form.content"
                                   rows='8'
                                   >
                                   </textarea>
-                                  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md">Editar</button>
+                                  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md">Crear</button>
                                    <hr class="my-6">
 
                                <Link  :href="route('notes.index')">
@@ -71,7 +71,7 @@
         },
         methods:{
             submit(){
-                this.$inertia.put(this.route('notes.create'), this.form)
+                this.$inertia.post(this.route('notes.store'), this.form)
             }
         }
     })
