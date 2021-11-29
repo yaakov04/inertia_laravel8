@@ -34,7 +34,13 @@
                                   >
                                   </textarea>
                                   <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md">Editar</button>
+                                  <a href="#" @click.prevent="destroy" class="bg-red-500 hover:bg-blue-700 text-white font-bold py-2 px-4 ml-2 rounded-md">Eliminar</a>
                               </form>
+                               <hr class="my-6">
+
+                               <Link  :href="route('notes.index')">
+                                    Volver
+                               </Link>
                             </div>
                         </div>
                     </div>
@@ -70,6 +76,11 @@
         methods:{
             submit(){
                 this.$inertia.put(this.route('notes.update', this.note.id), this.form)
+            },
+            destroy(){
+                if (confirm('¿Desea eliminar?')) {
+                this.$inertia.delete(this.route('notes.destroy', this.note.id))
+                }
             }
         }
     })
