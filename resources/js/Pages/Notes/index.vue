@@ -18,8 +18,10 @@
                         </div>
                         <div class="md:col-span-2 mt-5 md:mt-0">
                             <div class="shadow bg-white md:rounded-md p-4">
-                                <div class="mb-3">
+                                <div class="mb-3 flex justify-between">
+                                <input type="text" class="form-input rounded-md shadow-sm" placeholder="Buscar ..." v-model="q">
                                 <Link :href="route('notes.create')" class="bg-blue-500 text-white font-bold px-4 py-2 rounded-md">Crear</Link>
+
                                 </div>
                                 <table>
                                     <tr v-for="(note, i) in notes" :key="i">
@@ -61,6 +63,16 @@
         },
         props: {
             notes: Array,
+        },
+        data(){
+            return{
+                q:''
+            }
+        },
+        watch: {
+            q: function(e){
+                this.$inertia.replace(this.route('notes.index', {q: e}))
+            }
         }
     })
 </script>
