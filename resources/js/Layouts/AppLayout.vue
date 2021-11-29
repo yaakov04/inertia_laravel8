@@ -231,6 +231,9 @@
 
             <!-- Page Content -->
             <main>
+                <div v-if="$page.props.flash.status" class="bg-green-500 text-white text-sm font-bold p-4 text-center">
+                    <p>{{ $page.props.flash.status }}</p>
+                </div>
                 <slot></slot>
             </main>
         </div>
